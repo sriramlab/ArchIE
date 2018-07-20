@@ -1,0 +1,21 @@
+1. Example run with Neandertal gene flow
+
+ms 240 1 -t 1000 -r 95.9652180334997 1000000 -I 4 120 118 1 1 -en 0.06 1 0.01 -en 0.0605 1 1 -es 0.0475 1 0.97 -ej 0.0475 5 3 -ej 0.0625 2 1 -en 0.075 3 1 -en 0.078 3 1 -ej 0.225 4 3  -ej 0.325 3 1
+
+
+Simulates 4 populations: 
+Europeans
+Africans
+Neandertal
+Denisovans
+
+with gene flow from Neandertal into Europeans (pop3 to pop1)
+
+2. Outputs a file (*.ADMIXED.anc) with the ancestral of population 3 in population 1 (in this case Neandertal in Europeans).
+
+Columns = segregating sites
+Rows = Individual haplotypes
+
+1 = Alleles that have ancestry from population 3
+
+

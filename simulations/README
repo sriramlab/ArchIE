@@ -1,0 +1,1 @@
+Run `bash sim_stats_pipeline.sh` to create training and testing data in the ``../sim_data` folder.
