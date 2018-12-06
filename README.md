@@ -10,30 +10,30 @@ The last step will calculate features in 50KB windows with a 50KB step size (i.e
 
 You can find out more about the options for `calc_stats_window_data.py` using the -h flag:
 
-  python data/calc_stats_window_data.py -h
-  usage: calc_stats_window_data.py [-h] -s SNP -i IND -a ADMIX [-r REFERENCE] -c
-                                   CHROM -b BEGIN -e END -w WINDOW -z STEP
+    python data/calc_stats_window_data.py -h
+    usage: calc_stats_window_data.py [-h] -s SNP -i IND -a ADMIX [-r REFERENCE] -c
+                                     CHROM -b BEGIN -e END -w WINDOW -z STEP
 
-  Script to calculate stats for ArchIE. Prints stats to stdout.
+    Script to calculate stats for ArchIE. Prints stats to stdout.
 
-  optional arguments:
-    -h, --help            show this help message and exit
-    -s SNP, --snp SNP     .snp file with positions (eigenstrat format)
-    -i IND, --ind IND     .ind file of IDS (eigenstrat format)
-    -a ADMIX, --admix ADMIX
-                          .geno file for admixed/test population (eigenstrat
-                          format)
-    -r REFERENCE, --reference REFERENCE
-                          .geno file for reference population (eigenstrat
-                          format).
-    -c CHROM, --chrom CHROM
-                          Chromosome
-    -b BEGIN, --begin BEGIN
-                          Beginning position
-    -e END, --end END     End position
-    -w WINDOW, --window WINDOW
-                          Window length (eg. 50000)
-    -z STEP, --step STEP  Step size for the window (eg. 10000)
+    optional arguments:
+      -h, --help            show this help message and exit
+      -s SNP, --snp SNP     .snp file with positions (eigenstrat format)
+      -i IND, --ind IND     .ind file of IDS (eigenstrat format)
+      -a ADMIX, --admix ADMIX
+                            .geno file for admixed/test population (eigenstrat
+                            format)
+      -r REFERENCE, --reference REFERENCE
+                            .geno file for reference population (eigenstrat
+                            format).
+      -c CHROM, --chrom CHROM
+                            Chromosome
+      -b BEGIN, --begin BEGIN
+                            Beginning position
+      -e END, --end END     End position
+      -w WINDOW, --window WINDOW
+                            Window length (eg. 50000)
+      -z STEP, --step STEP  Step size for the window (eg. 10000)
 
 # Requirements
 
