@@ -143,7 +143,7 @@ def label(bases, snp_list, n_sites, arch_thresh, not_arch_thresh):
 
 if __name__ == "__main__":
 
-    parser = argparse.ArgumentParser(description="Script to calculate stats for AINN (archaic introgression neural network). Prints stats to stdout.")
+    parser = argparse.ArgumentParser(description="Script to calculate stats for ArchIE. Prints stats to stdout.")
     parser.add_argument("-s", "--snp", action="store", required=True, help=".snp file with positions (eigenstrat format)")
     parser.add_argument("-a", "--admix", action="store", required=True, help=".geno file for admixed/test population (eigenstrat format)")
     parser.add_argument("-r", "--reference", action="store", required=False, help=".geno file for reference population (eigenstrat format).")
