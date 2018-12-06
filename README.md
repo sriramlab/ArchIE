@@ -4,6 +4,21 @@ ArchIE (ARCHaic Introgression Explorer) is a method for reference-free inference
 1. run `bash create_training.sh` to simulate training data and calculate features (from the directory)
 2. run `bash create_test.sh` to simulate test data (from the directory)
 3. run `Rscript train.R` to train a logistic regression model (from the directory)
+4. run `python data/calc_stats_window_data.py -s data.snp -i data.ind -a data.geno -r ref.geno -c ${i} -b $start -e $end -w 50000 -z 50000 | gzip > output.gz`
+
+The last step will calculate features in 50KB windows with a 50KB step size (i.e. nonoverlapping) from `$start` to `$end`.
+
+# Requirements
+
+ArchIE requires the following dependencies:
+
+- Python 3
+- Numpy (1.13.0)
+- Scipy (0.19.0)
+- Scikit Learn (0.19.1)
+- R
+
+Note that other versions may work -- these are the ones I used.
 
 # Data formats
 
@@ -12,23 +27,23 @@ ArchIE uses the eigenstrat format, which contains `.snp` (list of polymorphic po
 
 # Applying to your data
 
-When running ArchIE, you can specify the number of haploid genomes to simulate ($n$), the window size, or the demographic history (in `ms.sh`). You must simulate the same number of haploid genomes as are in your data set. E.g if I have 15 diploid individuals with phased genomes, I need to simulate a dataset with 30 haploid genomes.  
+When running ArchIE, you can specify the number of haploid genomes to simulate (n), the window size, or the demographic history (in `ms.sh`). You must simulate the same number of haploid genomes as are in your data set. E.g if I have 15 diploid individuals with phased genomes, I need to simulate a dataset with 30 haploid genomes.  
 
 # Features
 
 We use several features to predict local ancestry. When the number of haplotypes simulated is 100 (the default) this is what the columns describe:
 
-  - 1-100 The individual frequency spectrum (sample size dependent)
-  - 101-201 - the distribution of distances between haplotypes (sample size dependent)
-  - 202 - Mean of the distribution of distances between haplotypes
-  - 203 - Variance of the distribution of distances between haplotypes
-  - 204 - Skew of the distribution of distances between haplotypes
-  - 205 - Kurtosis of the distribution of distances between haplotypes
-  - 206 - Minimum distance to the reference population
-  - 207 - [S*](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.0020105)
-  - 208 - Number of SNPs private to the target population
-  - 209-211 one hot encoded label for [archaic, not archaic, in-between]. 'In-between' is chosen if haplotypes fall between 30-70% archaic. This can be modified in the `calc_stats_ms.py` script
-  - 212 - Proportion of the haplotype that is archaic ranges [0-1]
+- 1-100 The individual frequency spectrum (sample size dependent)
+- 101-201 - the distribution of distances between haplotypes (sample size dependent)
+- 202 - Mean of the distribution of distances between haplotypes
+- 203 - Variance of the distribution of distances between haplotypes
+- 204 - Skew of the distribution of distances between haplotypes
+- 205 - Kurtosis of the distribution of distances between haplotypes
+- 206 - Minimum distance to the reference population
+- 207 - [S*](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.0020105)
+- 208 - Number of SNPs private to the target population
+- 209-211 one hot encoded label for [archaic, not archaic, in-between]. 'In-between' is chosen if haplotypes fall between 30-70% archaic. This can be modified in the `calc_stats_ms.py` script
+- 212 - Proportion of the haplotype that is archaic ranges [0-1]
 
 The order of the haplotypes remains the same if the sample size is changed, but the column numbers will change.
 
