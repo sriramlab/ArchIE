@@ -1,7 +1,0 @@
-This folder calculates neanderthal match statistics for the neural network calls.
-
-Steps:
-
-1. create VCF of CEU individuals only (unzipped)
-2. neanderthal freq files are the Altai neanderthal derived allele frequency
-`scp arun@hoffman2.idre.ucla.edu:/u/home/s/sriram/group/sriram/data/1kg/phase1/chr/polarize.human_ancestor.hapmap/ALL.hapmap/freq.altai/*.freq`
