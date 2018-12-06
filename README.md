@@ -16,6 +16,22 @@ When running ArchIE, you can specify the number of haploid genomes to simulate (
 
 # Features
 
+We use several features to predict local ancestry. When the number of haplotypes simulated is 100 (the default) this is what the columns describe:
+
+1-100 The individual frequency spectrum (sample size dependent)
+101-201 - the distribution of distances between haplotypes (sample size dependent)
+202 - Mean of the distribution of distances between haplotypes
+203 - Variance of the distribution of distances between haplotypes
+204 - Skew of the distribution of distances between haplotypes
+205 - Kurtosis of the distribution of distances between haplotypes
+206 - Minimum distance to the reference population
+207 - [S*](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.0020105)
+208 - Number of SNPs private to the target population
+209-211 one hot encoded label for [archaic, not archaic, in-between]. 'In-between' is chosen if haplotypes fall between 30-70% archaic. This can be modified in the `calc_stats_ms.py` script
+212 - Proportion of the haplotype that is archaic ranges [0-1]
+
+The order of the haplotypes remains the same if the sample size is changed, but the column numbers will change.
+
 # Note about `ms`
 
-We use a customized version of `ms` that allows us to track the ancestry of each base. Check around line 218 in ms.c for the modifications. `ms` was compiled on Mac OSX, if you run into problems you can recompile it with `gcc -o ms ms.c streec.c rand1.c -lm`
+We use a customized version of `ms` that allows us to track the ancestry of each SNP. Check around line 218 in ms.c for the modifications. `ms` was compiled on Mac OSX, if you run into problems you can recompile it with `gcc -o ms ms.c streec.c rand1.c -lm`
