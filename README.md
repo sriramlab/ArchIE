@@ -16,7 +16,7 @@ ArchIE requires the following dependencies:
 - Numpy (1.13.0)
 - Scipy (0.19.0)
 - Scikit Learn (0.19.1)
-- R
+- R (3.4.0)
 
 Note that other versions may work -- these are the ones I used.
 
