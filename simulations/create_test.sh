@@ -1,5 +1,6 @@
 set -e
-mkdir -f sims/
+gcc -o ../msmodified/ms ../msmodified/ms.c ../msmodified/streec.c ../msmodified/rand1.c -lm
+mkdir -p sims/
 
 NREPS=1000 # number of simulations to run.
 f=0.02 # admixture fraction

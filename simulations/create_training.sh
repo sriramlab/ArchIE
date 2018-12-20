@@ -1,5 +1,6 @@
 set -e
-mkdir -f sims/
+gcc -o ../msmodified/ms ../msmodified/ms.c ../msmodified/streec.c ../msmodified/rand1.c -lm # recompile ms to make sure it works
+mkdir -p sims/
 
 NREPS=10000 # number of simulations to run.
 f=0.02 # admixture fraction
