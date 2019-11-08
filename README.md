@@ -49,7 +49,9 @@ Note that other versions may work -- these are the ones I used.
 
 # Data formats
 
-ArchIE uses the eigenstrat format, which contains `.snp` (list of polymorphic positions), `.geno` (genotypes), and `.ind` (individual IDs) files. ArchIE expects phased genotypes. You can convert from VCF format to eigenstrat using Iain Mathieson's [genetic data converter](https://github.com/mathii/gdc). To calculate features on your data, use the `calc_stats_window_data.py` script in the data folder.
+ArchIE uses the eigenstrat format, which contains `.snp` (list of polymorphic positions), `.geno` (genotypes), and `.ind` (individual IDs) files. ArchIE expects phased genotypes. You can convert from VCF format to eigenstrat using Iain Mathieson's [genetic data converter](https://github.com/mathii/gdc). A version of the script is included in the `data` folder which preserves phase information during the conversion (which is required to run ArchIE). If you use your own script for this conversion, the output should be in the following order: `Ind1-Hap1 Ind1-Hap2 Ind2-Hap1 Ind2-Hap2...`.
+
+To calculate features on your data, use the `calc_stats_window_data.py` script in the data folder.
 
 
 # Applying to your data
